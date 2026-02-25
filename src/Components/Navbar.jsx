@@ -79,11 +79,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               <img src={project1} alt="" className={iconClass("project")} />
             )}
           </a>
-          <a href="">
+          <a href="#contact">
             {darkMode ? (
-              <img src={contact} alt="" className={iconClass("")} />
+              <img src={contact} alt="" className={iconClass("contact")} />
             ) : (
-              <img src={contact1} alt="" className={iconClass("")} />
+              <img src={contact1} alt="" className={iconClass("contact")} />
             )}
           </a>
 
@@ -93,10 +93,6 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           >
             {!darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-
-          {/* <button onClick={() => setDarkMode((prev) => !prev)} className="ml-2">
-            Toggle
-          </button> */}
         </div>
       </div>
     </>

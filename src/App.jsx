@@ -10,6 +10,7 @@ import About from "./pages/About";
 import Snowfall from "react-snowfall";
 import Carousel from "./Components/Carousel";
 import Service from "./pages/Service";
+import Contact from "./pages/Contact";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(true);
@@ -43,18 +44,14 @@ const App = () => {
                     <section id="project" className="min-h-screen pt-10">
                       <Carousel />
                     </section>
-                    {/* <section id="contact">...</section> */}
+                    <section id="contact" className="min-h-screen pt-10">
+                      <Contact />
+                    </section>
                   </div>
                 </>
               }
             />
-
-            {/* <Route path="/projects" element={<Projects />} /> */}
-            <Route path="/carousel" element={<Carousel />} />
           </Routes>
-
-          {/* later */}
-          {/* <section id="resume">...</section> */}
         </div>
       </div>
     </>
