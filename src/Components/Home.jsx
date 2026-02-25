@@ -24,14 +24,14 @@ const Home = () => {
         />
       </div>
 
-      <div className="mt-6">
+      {/* <div className="mt-6">
         <Link
           to="/carousel"
           className="text-2xl underline hover:text-[#ff7300]"
         >
           My works →
         </Link>
-      </div>
+      </div> */}
 
       {/* Icons */}
       <div className="absolute right-8 top-1/2 -translate-y-1/2 flex flex-col items-center gap-6 text-2xl">

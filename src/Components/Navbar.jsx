@@ -7,12 +7,12 @@ import about from "../assets/idCard1.png";
 import about1 from "../assets/idCard.png";
 import service from "../assets/service.png";
 import service1 from "../assets/service1.png";
-import resume from "../assets/resume1.png";
-import resume1 from "../assets/resume.png";
+import project from "../assets/project1.png";
+import project1 from "../assets/project.png";
 import contact from "../assets/addressBook1.png";
 import contact1 from "../assets/addressBook.png";
 
-const sections = ["home", "about", "service", "resume", "contact"];
+const sections = ["home", "about", "service", "project", "contact"];
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [activeSection, setActiveSection] = useState("home");
@@ -72,11 +72,11 @@ const Navbar = ({ darkMode, setDarkMode }) => {
               <img src={service1} alt="" className={iconClass("service")} />
             )}
           </a>
-          <a href="">
+          <a href="#project">
             {darkMode ? (
-              <img src={resume} alt="" className={iconClass("")} />
+              <img src={project} alt="" className={iconClass("project")} />
             ) : (
-              <img src={resume1} alt="" className={iconClass("")} />
+              <img src={project1} alt="" className={iconClass("project")} />
             )}
           </a>
           <a href="">

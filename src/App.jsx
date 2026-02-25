@@ -40,7 +40,7 @@ const App = () => {
                     <section id="service" className="min-h-screen pt-10">
                       <Service />
                     </section>
-                    <section id="" className="min-h-screen pt-10">
+                    <section id="project" className="min-h-screen pt-10">
                       <Carousel />
                     </section>
                     {/* <section id="contact">...</section> */}

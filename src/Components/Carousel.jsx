@@ -73,20 +73,18 @@ export default function ExactFlowCarousel() {
   const rightActive = !isOdd;
 
   return (
-    <div className="h-screen">
-      <header>
+    <div className="h-screen overflow-hidden">
+      {/* <header>
         <nav className="flex flex-row items-center gap-3 fixed p-4">
           <a
             href="/"
             id="back"
             className="p-px w-7 h-7 rounded-2xl text-2xl font-semibold text-black flex items-center justify-center"
           >
-            {/* &lt; */}
             <img src={goBack} alt="" className="" />
           </a>
-          {/* <p>Go back</p> */}
         </nav>
-      </header>
+      </header> */}
 
       <div className="flex flex-col justify-center items-center h-[75%] roboto-slab-regular">
         <div className="mb-16 text-center">
