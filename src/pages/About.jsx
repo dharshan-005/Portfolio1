@@ -7,26 +7,34 @@ const About = () => {
 
   return (
     <>
-      <section className="max-w-6xl mx-auto px-6 py-12 zen-antique-soft-regular">
-        <div className="mb-16 text-center">
+      <section
+        id="about"
+        className="max-w-6xl mx-auto px-6 py-12 playfair-display-regular"
+      >
+        <div className="mb-10 text-center">
           {/* Appear on scroll */}
-          <h1 className="text-5xl md:text-[4rem] font-semibold">About Me?</h1>
+          <h1
+            id="text"
+            className="text-4xl md:text-6xl font-semibold tracking-tight"
+          >
+            About Me
+          </h1>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="flex justify-center md:justify-start">
             {/* From center to left on scroll */}
             <img
               src={me}
               alt="Dharshan"
-              className="w-72 h-98 object-cover rounded-2xl shadow-lg"
+              className="w-80 h-105 object-cover rounded-2xl shadow-lg"
             />
           </div>
 
           {/* Text */}
           {/* Appear after the img moved to left */}
           <div>
-            <p className="text-lg text-gray-700 dark:text-white leading-relaxed mb-6">
+            <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
               I'm <strong>Dharshan VK.</strong> An aspiring Full-Stack Developer
               with a strong foundation in modern web technologies, UI/UX
               principles, and scalable application development. Passionate about
@@ -36,21 +44,21 @@ const About = () => {
             </p>
 
             {/* Tabs */}
-            <div className="flex gap-6 mb-3 text-sm font-medium">
+            <div className="flex gap-8 mb-4 text-sm font-medium pb-2">
               <p
-                className={`cursor-pointer ${activeTab === "skills" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
+                className={`pb-1 cursor-pointer transition ${activeTab === "skills" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
                 onClick={() => setActiveTab("skills")}
               >
                 Skills
               </p>
               <p
-                className={`cursor-pointer ${activeTab === "education" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
+                className={`pb-1 cursor-pointer transition ${activeTab === "education" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
                 onClick={() => setActiveTab("education")}
               >
                 Education
               </p>
               <p
-                className={`cursor-pointer ${activeTab === "languages" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
+                className={`pb-1 cursor-pointer transition ${activeTab === "languages" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
                 onClick={() => setActiveTab("languages")}
               >
                 Languages
@@ -70,13 +78,13 @@ const About = () => {
                     <span className="text-[14px] text-[#ff7300]">
                       Photography
                     </span>{" "}
-                    - Designing Web Applications
+                    - Capturing visual Stories
                   </li>
                   <li>
                     <span className="text-[14px] text-[#ff7300]">
                       UI/UX Developer
                     </span>{" "}
-                    - Designing Web Applications
+                    - Designing User-Centered Interfaces
                   </li>
                 </ul>
               </div>
@@ -122,9 +130,9 @@ const About = () => {
             )}
 
             {/* Tech Stack */}
-            <div className="mt-5">
+            <div className="mt-10">
               <h3 className="text-lg font-semibold mb-2">Tech Stack Known</h3>
-              <hr className="mb-4" />
+              <hr className="mb-4 border-gray-700/75" />
 
               <div className="flex flex-wrap gap-3">
                 {[

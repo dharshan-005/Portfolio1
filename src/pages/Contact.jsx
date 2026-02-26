@@ -1,14 +1,69 @@
-import React from "react";
+import { FiArrowRight } from "react-icons/fi";
 
-const Contact = () => {
+export default function Contact() {
   return (
-    <section className="max-w-6xl mx-auto px-6 py-12 zen-antique-soft-regular">
-      <div className="mb-16 text-center">
-        {/* Appear on scroll */}
-        <h1 className="text-5xl md:text-[4rem] font-semibold">Contact</h1>
+    <section className="min-h-screen bg-[#0e0e0e] text-white px-8 md:px-20 py-20 flex flex-col lg:flex-row gap-16 ">
+      {/* LEFT SIDE */}
+      <div className="flex-1 flex items-center">
+        <h1 className="font-serif text-[60px] md:text-[130px] leading-[0.95] font-medium">
+          LET’S <br />
+          GET IN <br />
+          TOUCH
+        </h1>
+      </div>
+
+      {/* RIGHT SIDE */}
+      <div className="flex-1 flex flex-col justify-between">
+        {/* FORM */}
+        <form className="w-full">
+          <div className="mb-10">
+            <input
+              type="text"
+              placeholder="FULL NAME"
+              className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-3 text-sm tracking-widest"
+            />
+          </div>
+
+          <div className="flex flex-col md:flex-row gap-8 mb-10">
+            <input
+              type="email"
+              placeholder="EMAIL"
+              className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-3 text-sm tracking-widest"
+            />
+            <input
+              type="text"
+              placeholder="PHONE"
+              className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-3 text-sm tracking-widest"
+            />
+          </div>
+
+          <div className="mb-10">
+            <textarea
+              placeholder="MESSAGE"
+              rows="2"
+              className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-3 text-sm tracking-widest resize-none"
+            />
+          </div>
+
+          <button type="submit" className="text-3xl float-right cursor-pointer">
+            <FiArrowRight />
+          </button>
+        </form>
+
+        {/* CONTACT INFO */}
+        <div className="flex flex-col md:flex-row justify-between gap-10 mt-20 mb-12 text-xs text-gray-400">
+          <div>
+            <p className="text-white tracking-widest mb-3">Contact</p>
+            <p>+91 8220856919</p>
+            <p>vkdharshan38@gmail.com</p>
+          </div>
+
+          <div>
+            <p className="text-white tracking-widest mb-3">Location</p>
+            <p>Coimbatore, Tamil Nadu</p>
+          </div>
+        </div>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}

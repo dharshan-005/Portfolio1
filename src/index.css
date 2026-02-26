@@ -171,6 +171,13 @@ html {
   font-style: normal;
 }
 
+.playfair-display-regular {
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 .--my-grid-cols {
   grid-template-columns: repeat(3, 90px);
 }

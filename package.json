@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@fontsource/righteous": "^5.2.7",
+    "@gsap/react": "^2.1.2",
     "@tailwindcss/vite": "^4.1.18",
     "autoprefixer": "^10.4.23",
     "framer-motion": "^12.27.0",

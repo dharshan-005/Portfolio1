@@ -3,14 +3,16 @@ import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import Dharshan from "../assets/Dharshan-gemini.png";
 import TextType from "../pages/TextType";
 
-import resume from "../assets/Dharshan_Resume.pdf"
+import resume from "../assets/Dharshan_Resume.pdf";
 
 const Home = () => {
   const [showResume, setShowResume] = useState(false);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center px-6 md:px-16 zen-antique-soft-regular">
-
+    <section
+      className="relative w-full min-h-screen flex items-center justify-center px-6 md:px-16 zen-antique-soft-regular bg-cover bg-center bg-no-repeat bg-[url('/src/assets/back2.png')]
+             dark:bg-[url('/src/assets/back1.png')]"
+    >
       {/* LEFT — LOGO */}
       <div className="absolute left-6 md:left-12 top-8">
         <div className="text-xl md:text-2xl font-bold tracking-widest">
@@ -19,27 +21,18 @@ const Home = () => {
         </div>
       </div>
 
-
       {/* RIGHT — RESUME + ICONS */}
       <div className="absolute right-6 md:right-12 top-8 flex flex-col items-end gap-10">
-
         {/* Resume Button */}
         <button
           onClick={() => setShowResume(true)}
-          className="
-            border border-orange-500
-            text-orange-500
-            px-5 py-2
-            rounded-lg
-            hover:bg-orange-500 hover:text-white
-            transition
-          "
+          className="border border-orange-500 text-orange-500 px-5 py-2 rounded-lg hover:bg-orange-500 hover:text-white transition cursor-pointer"
         >
           Resume
         </button>
 
         {/* Icons */}
-        <div className="flex flex-col items-center gap-6 text-2xl">
+        <div className="absolute top-70 flex flex-col items-center gap-6 text-2xl">
           <a href="#" className="hover:text-orange-500 transition">
             <FaInstagram />
           </a>
@@ -60,18 +53,15 @@ const Home = () => {
 
           <div className="w-0.5 h-32 bg-white/40"></div>
         </div>
-
       </div>
-
 
       {/* CENTER — HERO CONTENT */}
       <div className="flex flex-col md:flex-row items-center gap-12">
-
         {/* TEXT */}
-        <div className="text-2xl md:text-5xl lg:text-6xl flex flex-col gap-4">
+        <div className="relative z-10 text-center text-2xl md:text-5xl lg:text-6xl flex flex-col gap-4">
           <h1>I'm Dharshan VK</h1>
 
-          <div className="flex gap-4 flex-wrap">
+          <div className="flex justify-center gap-4 flex-wrap">
             I'm a
             <TextType
               text={[
@@ -88,23 +78,19 @@ const Home = () => {
         </div>
 
         {/* IMAGE */}
-        <div className="relative">
+        {/* <div className="relative">
           <img
             src={Dharshan}
             alt="Dharshan"
             className="w-64 md:w-96 lg:w-105 rounded-2xl shadow-2xl"
           />
-        </div>
-
+        </div> */}
       </div>
-
 
       {/* RESUME MODAL */}
       {showResume && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm">
-
           <div className="relative w-[90%] md:w-[70%] lg:w-[55%] h-[85%] bg-white rounded-xl overflow-hidden">
-
             <button
               onClick={() => setShowResume(false)}
               className="absolute top-3 right-4 text-black text-xl font-bold"
@@ -112,16 +98,10 @@ const Home = () => {
               ✕
             </button>
 
-            <iframe
-              src={resume}
-              title="Resume"
-              className="w-full h-full"
-            />
-
+            <iframe src={resume} title="Resume" className="w-full h-full" />
           </div>
         </div>
       )}
-
     </section>
   );
 };

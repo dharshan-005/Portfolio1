@@ -123,14 +123,13 @@ export default function Service() {
   return (
     <main ref={containerRef} className="font-['Instrument_Serif']">
       <section className="sticky h-svh flex items-center justify-center px-8 max-lg:h-auto max-lg:py-16">
-        {/* Header */}
+
         <div className="sticky-header absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 max-lg:relative max-lg:transform-none max-lg:mb-16">
           <h1 className="text-[4rem] opacity-0 translate-y-10 text-center max-lg:opacity-100 max-lg:text-3xl">
             What am I good at?
           </h1>
         </div>
 
-        {/* Cards */}
         <div className="card-container w-[75%] flex perspective-[1000px] translate-y-10 max-lg:w-full max-lg:flex-col max-lg:gap-8">
           {[
             ["card-1", card1, "UI / UX Design", "bg-[#b2b2b2] text-[#fff]"],

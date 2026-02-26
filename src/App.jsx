@@ -22,8 +22,8 @@ const App = () => {
 
   return (
     <>
-      {/* <Snowfall color="#ff7300" /> */}
-      <div className="bg-[linear-gradient(120deg,#dbeafe,#eef2ff)] text-black dark:bg-[linear-gradient(120deg,#000000,#000000)] dark:text-white min-h-screen transition-colors duration-300">
+      {/* <Snowfall color="#ff7300" /> bg-[linear-gradient(120deg,#dbeafe,#eef2ff)]*/}
+      <div className="bg-neutral-200 text-black dark:bg-[linear-gradient(120deg,#000000,#000000)] dark:text-white min-h-screen transition-colors duration-300">
         <div>
           <Routes>
             <Route
@@ -31,7 +31,7 @@ const App = () => {
               element={
                 <>
                   <Navbar darkMode={darkMode} setDarkMode={setDarkMode} />
-                  <div className="ml-8">
+                  <div className="">
                     <section id="home" className="min-h-screen">
                       <Home />
                     </section>
