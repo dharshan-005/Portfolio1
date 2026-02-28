@@ -1,21 +1,101 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import me from "../assets/me2.jpg";
 
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const About = () => {
   const [activeTab, setActiveTab] = useState("skills");
+  const aboutRef = useRef(null);
+
+  useGSAP(
+    () => {
+      // const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          toggleActions: "restart pause reverse pause",
+          start: "top top",
+          // markers: true,
+          end: "+=100%",
+          pin: true,
+          scrub: 1,
+        },
+      });
+
+      tl.from(".abt-txt", {
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+      })
+        .from(
+          ".abt-img",
+          {
+            x: 40,
+            opacity: 0,
+            duration: 0.8,
+          },
+          "-=0.4",
+        )
+        .from(
+          ".abt-para",
+          {
+            y: 60,
+            opacity: 0,
+            duration: 1,
+          },
+          "-=0.4",
+        )
+        .from(
+          ".abt-tabs",
+          {
+            y: 30,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.6,
+          },
+          "-=0.6",
+        )
+        .from(
+          ".tab-details",
+          {
+            y: 30,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.6,
+          },
+          "-=0.2",
+        )
+        .from(
+          ".abt-tech",
+          {
+            y: 30,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.6,
+          },
+          "-=0.2",
+        );
+    },
+    { scope: aboutRef },
+  );
 
   return (
     <>
       <section
+        ref={aboutRef}
         id="about"
-        className="max-w-6xl mx-auto px-6 py-12 playfair-display-regular"
+        className="about max-w-6xl mx-auto px-6 py-12 playfair-display-regular"
       >
         <div className="mb-10 text-center">
           {/* Appear on scroll */}
           <h1
             id="text"
-            className="text-4xl md:text-6xl font-semibold tracking-tight"
+            className="abt-txt text-4xl md:text-6xl font-semibold tracking-tight"
           >
             About Me
           </h1>
@@ -27,14 +107,14 @@ const About = () => {
             <img
               src={me}
               alt="Dharshan"
-              className="w-80 h-105 object-cover rounded-2xl shadow-lg"
+              className="abt-img w-80 h-105 object-cover rounded-2xl shadow-lg"
             />
           </div>
 
           {/* Text */}
           {/* Appear after the img moved to left */}
           <div>
-            <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
+            <p className="abt-para text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
               I'm <strong>Dharshan VK.</strong> An aspiring Full-Stack Developer
               with a strong foundation in modern web technologies, UI/UX
               principles, and scalable application development. Passionate about
@@ -44,21 +124,21 @@ const About = () => {
             </p>
 
             {/* Tabs */}
-            <div className="flex gap-8 mb-4 text-sm font-medium pb-2">
+            <div className="abt-tabs flex gap-8 mb-4 text-sm font-medium pb-2">
               <p
-                className={`pb-1 cursor-pointer transition ${activeTab === "skills" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
+                className={`pb-1 cursor-pointer transition ${activeTab === "skills" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-black dark:hover:text-white"}`}
                 onClick={() => setActiveTab("skills")}
               >
                 Skills
               </p>
               <p
-                className={`pb-1 cursor-pointer transition ${activeTab === "education" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
+                className={`pb-1 cursor-pointer transition ${activeTab === "education" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-black dark:hover:text-white"}`}
                 onClick={() => setActiveTab("education")}
               >
                 Education
               </p>
               <p
-                className={`pb-1 cursor-pointer transition ${activeTab === "languages" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-white"}`}
+                className={`pb-1 cursor-pointer transition ${activeTab === "languages" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-black dark:hover:text-white"}`}
                 onClick={() => setActiveTab("languages")}
               >
                 Languages
@@ -66,7 +146,7 @@ const About = () => {
             </div>
 
             {activeTab === "skills" && (
-              <div className="flex">
+              <div className="tab-details flex">
                 <ul className="pl-3.75">
                   <li>
                     <span className="text-[14px] text-[#ff7300]">
@@ -90,7 +170,7 @@ const About = () => {
               </div>
             )}
             {activeTab === "education" && (
-              <div className="flex">
+              <div className="tab-details flex">
                 <ul className="pl-3.75">
                   <li>
                     <span className="text-[14px] text-[#ff7300]">
@@ -114,7 +194,7 @@ const About = () => {
               </div>
             )}
             {activeTab === "languages" && (
-              <div className="flex">
+              <div className="tab-details flex">
                 <ul className="pl-3.75">
                   <li>
                     <span className="text-[14px]">Tamil</span>
@@ -130,7 +210,7 @@ const About = () => {
             )}
 
             {/* Tech Stack */}
-            <div className="mt-10">
+            <div className="abt-tech mt-10">
               <h3 className="text-lg font-semibold mb-2">Tech Stack Known</h3>
               <hr className="mb-4 border-gray-700/75" />
 

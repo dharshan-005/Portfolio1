@@ -11,14 +11,46 @@ import Snowfall from "react-snowfall";
 import Carousel from "./Components/Carousel";
 import Service from "./pages/Service";
 import Contact from "./pages/Contact";
+import GsapAnimate from "./Components/gsap";
+
+import Lenis from "lenis";
+import { ScrollTrigger } from "gsap/all";
+import gsap from "gsap";
+import Project from "./pages/Project";
 
 const App = () => {
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("theme");
+    return saved ? saved === "dark" : true;
+  });
 
   useEffect(() => {
     const root = document.documentElement;
-    darkMode ? root.classList.add("dark") : root.classList.remove("dark");
+    if (darkMode) {
+      root.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      root.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
   }, [darkMode]);
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    const lenis = new Lenis();
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    lenis.on("scroll", ScrollTrigger.update);
+
+    return () => lenis.destroy();
+  }, []);
 
   return (
     <>
@@ -42,8 +74,11 @@ const App = () => {
                       <Service />
                     </section>
                     <section id="project" className="min-h-screen pt-10">
-                      <Carousel />
+                      <Project />
                     </section>
+                    {/* <section>
+                      <Carousel />
+                    </section> */}
                     <section id="contact" className="min-h-screen pt-10">
                       <Contact />
                     </section>

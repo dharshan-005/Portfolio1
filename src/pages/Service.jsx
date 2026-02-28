@@ -1,11 +1,11 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
-import Lenis from "lenis";
+// import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-import card1 from '../assets/card-1.png'
-import card2 from '../assets/card-2.png'
-import card3 from '../assets/card-3.png'
+import card1 from "../assets/card-1.png";
+import card2 from "../assets/card-2.png";
+import card3 from "../assets/card-3.png";
 
 export default function Service() {
   const containerRef = useRef(null);
@@ -15,20 +15,20 @@ export default function Service() {
 
     gsap.registerPlugin(ScrollTrigger);
 
-    const lenis = new Lenis({ smoothWheel: true });
-    lenis.on("scroll", ScrollTrigger.update);
+    // const lenis = new Lenis({ smoothWheel: true });
+    // lenis.on("scroll", ScrollTrigger.update);
 
-    gsap.ticker.add((time) => {
-      lenis.raf(time * 1000);
-    });
+    // gsap.ticker.add((time) => {
+    //   lenis.raf(time * 1000);
+    // });
 
-    gsap.ticker.lagSmoothing(0);
+    // gsap.ticker.lagSmoothing(0);
 
     const cardContainer = document.querySelector(".card-container");
     const stickyHeader = document.querySelector(".sticky-header h1");
 
     const initAnimations = () => {
-      ScrollTrigger.getAll().forEach((t) => t.kill());
+      // ScrollTrigger.getAll().forEach((t) => t.kill());
       const mm = gsap.matchMedia();
 
       // Mobile: disable
@@ -65,9 +65,10 @@ export default function Service() {
 
             // Width
             gsap.set(cardContainer, {
-              width: p <= 0.25
-                ? `${gsap.utils.mapRange(0, 0.25, 75, 60, p)}%`
-                : "60%",
+              width:
+                p <= 0.25
+                  ? `${gsap.utils.mapRange(0, 0.25, 75, 60, p)}%`
+                  : "60%",
             });
 
             // Gap + radius
@@ -115,15 +116,17 @@ export default function Service() {
 
     return () => {
       window.removeEventListener("resize", initAnimations);
-      ScrollTrigger.getAll().forEach((t) => t.kill());
-      lenis.destroy();
+      // ScrollTrigger.getAll().forEach((t) => t.kill());
+      // lenis.destroy();
     };
   }, []);
 
   return (
     <main ref={containerRef} className="font-['Instrument_Serif']">
-      <section className="sticky h-svh flex items-center justify-center px-8 max-lg:h-auto max-lg:py-16">
-
+      <section
+        // ref={sectionRef}
+        className="sticky h-svh flex items-center justify-center px-8 max-lg:h-auto max-lg:py-16"
+      >
         <div className="sticky-header absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 max-lg:relative max-lg:transform-none max-lg:mb-16">
           <h1 className="text-[4rem] opacity-0 translate-y-10 text-center max-lg:opacity-100 max-lg:text-3xl">
             What am I good at?
@@ -143,7 +146,11 @@ export default function Service() {
             >
               {/* Front */}
               <div className="absolute inset-0 backface-hidden overflow-hidden rounded-inherit">
-                <img src={img} alt={text} className="w-full h-full object-cover" />
+                <img
+                  src={img}
+                  alt={text}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               {/* Back */}

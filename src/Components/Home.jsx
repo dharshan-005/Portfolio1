@@ -1,12 +1,54 @@
 import React, { useState } from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
 import Dharshan from "../assets/Dharshan-gemini.png";
-import TextType from "../pages/TextType";
+import TextType from "./TextType";
 
 import resume from "../assets/Dharshan_Resume.pdf";
+import logo from "../assets/logor.png";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Home = () => {
   const [showResume, setShowResume] = useState(false);
+
+  useGSAP(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power3.inOut" } });
+
+    tl.from(".logo", {
+      y: -40,
+      opacity: 0,
+      duration: 0.8,
+    })
+      .from(
+        ".resume-btn",
+        {
+          x: 40,
+          opacity: 0,
+          duration: 0.8,
+        },
+        "-=0.4",
+      )
+      .from(
+        ".hero-text",
+        {
+          y: 60,
+          opacity: 0,
+          duration: 1,
+        },
+        "-=0.4",
+      )
+      .from(
+        ".social-icon",
+        {
+          y: 30,
+          opacity: 0,
+          stagger: 0.15,
+          duration: 0.6,
+        },
+        "-=0.6",
+      );
+  });
 
   return (
     <section
@@ -14,15 +56,20 @@ const Home = () => {
              dark:bg-[url('/src/assets/back1.png')]"
     >
       {/* LEFT — LOGO */}
-      <div className="absolute left-6 md:left-12 top-8">
-        <div className="text-xl md:text-2xl font-bold tracking-widest">
+      <div className="logo absolute left-6 md:left-12 top-8 flex items-center">
+        <img
+          src={logo}
+          alt="Dharshan Logo"
+          className="h-10 md:h-12 w-auto object-contain"
+        />
+        {/* <div className="text-xl md:text-2xl font-bold tracking-widest">
           <span className="text-white">Dharshan</span>
           <span className="text-orange-500">.</span>
-        </div>
+        </div> */}
       </div>
 
       {/* RIGHT — RESUME + ICONS */}
-      <div className="absolute right-6 md:right-12 top-8 flex flex-col items-end gap-10">
+      <div className="resume-btn absolute right-6 md:right-12 top-8 flex flex-col items-end gap-10">
         {/* Resume Button */}
         <button
           onClick={() => setShowResume(true)}
@@ -32,7 +79,10 @@ const Home = () => {
         </button>
 
         {/* Icons */}
-        <div className="absolute top-70 flex flex-col items-center gap-6 text-2xl">
+        <div
+          id="icons"
+          className="social-icon absolute top-70 flex flex-col items-center gap-6 text-2xl"
+        >
           <a href="#" className="hover:text-orange-500 transition">
             <FaInstagram />
           </a>
@@ -51,14 +101,14 @@ const Home = () => {
             <FaGithub />
           </a>
 
-          <div className="w-0.5 h-32 bg-white/40"></div>
+          <div className="w-0.5 h-32 bg-black dark:bg-white/40"></div>
         </div>
       </div>
 
       {/* CENTER — HERO CONTENT */}
       <div className="flex flex-col md:flex-row items-center gap-12">
         {/* TEXT */}
-        <div className="relative z-10 text-center text-2xl md:text-5xl lg:text-6xl flex flex-col gap-4">
+        <div className="hero-text relative z-10 text-center text-2xl md:text-5xl lg:text-6xl flex flex-col gap-4">
           <h1>I'm Dharshan VK</h1>
 
           <div className="flex justify-center gap-4 flex-wrap">

@@ -2,12 +2,12 @@ import { useState } from "react";
 
 import forward from "../assets/forward1.png";
 import back from "../assets/backward1.png";
-import goBack from "../assets/back.svg";
+// import goBack from "../assets/back.svg";
 
 const slides = [
   {
     id: 1,
-    img: "/images/img1.png",
+    img: "/images/Hira.png",
     project: "1",
     title: "Hira",
     description: "Personal Japanese learning website.",
