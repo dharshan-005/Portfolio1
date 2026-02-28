@@ -107,14 +107,14 @@ const About = () => {
             <img
               src={me}
               alt="Dharshan"
-              className="abt-img w-80 h-105 object-cover rounded-2xl shadow-lg"
+              className="abt-img w-40 md:w-80 md:h-105 object-cover rounded-2xl shadow-lg"
             />
           </div>
 
           {/* Text */}
           {/* Appear after the img moved to left */}
           <div>
-            <p className="abt-para text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
+            <p className="abt-para md:text-lg leading-relaxed text-gray-600 dark:text-gray-300 mb-6">
               I'm <strong>Dharshan VK.</strong> An aspiring Full-Stack Developer
               with a strong foundation in modern web technologies, UI/UX
               principles, and scalable application development. Passionate about
@@ -124,7 +124,7 @@ const About = () => {
             </p>
 
             {/* Tabs */}
-            <div className="abt-tabs flex gap-8 mb-4 text-sm font-medium pb-2">
+            <div className="abt-tabs flex gap-8 mb-4 text-[12px] md:text-sm font-medium pb-2">
               <p
                 className={`pb-1 cursor-pointer transition ${activeTab === "skills" ? "text-[#ff7300] border-b-2 border-[#ff7300]" : "text-gray-500 hover:text-black dark:hover:text-white"}`}
                 onClick={() => setActiveTab("skills")}
@@ -147,21 +147,21 @@ const About = () => {
 
             {activeTab === "skills" && (
               <div className="tab-details flex">
-                <ul className="pl-3.75">
+                <ul className="pl-3.75 text-[13px] md:text-sm">
                   <li>
-                    <span className="text-[14px] text-[#ff7300]">
+                    <span className="text-[#ff7300]">
                       Web Developement
                     </span>{" "}
                     - Designing Web Applications
                   </li>
                   <li>
-                    <span className="text-[14px] text-[#ff7300]">
+                    <span className="text-[#ff7300]">
                       Photography
                     </span>{" "}
                     - Capturing visual Stories
                   </li>
                   <li>
-                    <span className="text-[14px] text-[#ff7300]">
+                    <span className="text-[#ff7300]">
                       UI/UX Developer
                     </span>{" "}
                     - Designing User-Centered Interfaces
@@ -173,19 +173,19 @@ const About = () => {
               <div className="tab-details flex">
                 <ul className="pl-3.75">
                   <li>
-                    <span className="text-[14px] text-[#ff7300]">
+                    <span className="text-[#ff7300]">
                       2024 - 2026
                     </span>{" "}
                     - B.E.ECE @SNS College Of Technology
                   </li>
                   <li>
-                    <span className="text-[14px] text-[#ff7300]">
+                    <span className="text-[#ff7300]">
                       2021 - 2022
                     </span>{" "}
                     - HSC @Chandra Matriculation Hr. Sec. School
                   </li>
                   <li>
-                    <span className="text-[14px] text-[#ff7300]">
+                    <span className="text-[#ff7300]">
                       2019 - 2020
                     </span>{" "}
                     - SSLC @Chandra Matriculation Hr. Sec. School
@@ -197,13 +197,13 @@ const About = () => {
               <div className="tab-details flex">
                 <ul className="pl-3.75">
                   <li>
-                    <span className="text-[14px]">Tamil</span>
+                    <span className="">Tamil</span>
                   </li>
                   <li>
-                    <span className="text-[14px]">Japanese</span>
+                    <span className="">Japanese</span>
                   </li>
                   <li>
-                    <span className="text-[14px]">Hindi</span>
+                    <span className="">Hindi</span>
                   </li>
                 </ul>
               </div>

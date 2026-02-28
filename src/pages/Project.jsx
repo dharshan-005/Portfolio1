@@ -70,6 +70,10 @@ const Project = () => {
           borderRadius: "10px",
         });
 
+        const nextItem = items[index + 1];
+
+        if (!nextItem) return;
+
         directions == "horizontal"
           ? tl.to(
               items[index + 1],

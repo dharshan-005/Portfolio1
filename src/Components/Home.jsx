@@ -62,10 +62,6 @@ const Home = () => {
           alt="Dharshan Logo"
           className="h-10 md:h-12 w-auto object-contain"
         />
-        {/* <div className="text-xl md:text-2xl font-bold tracking-widest">
-          <span className="text-white">Dharshan</span>
-          <span className="text-orange-500">.</span>
-        </div> */}
       </div>
 
       {/* RIGHT — RESUME + ICONS */}
@@ -81,7 +77,7 @@ const Home = () => {
         {/* Icons */}
         <div
           id="icons"
-          className="social-icon absolute top-70 flex flex-col items-center gap-6 text-2xl"
+          className="social-icon absolute top-90 md:top-70 flex flex-col items-center gap-6 text-2xl"
         >
           <a href="#" className="hover:text-orange-500 transition">
             <FaInstagram />
@@ -101,14 +97,14 @@ const Home = () => {
             <FaGithub />
           </a>
 
-          <div className="w-0.5 h-32 bg-black dark:bg-white/40"></div>
+          <div className="w-0.5 h-16 md:h-32 bg-black dark:bg-white/40"></div>
         </div>
       </div>
 
       {/* CENTER — HERO CONTENT */}
       <div className="flex flex-col md:flex-row items-center gap-12">
         {/* TEXT */}
-        <div className="hero-text relative z-10 text-center text-2xl md:text-5xl lg:text-6xl flex flex-col gap-4">
+        <div className="hero-text relative -top-24 md:top-0 z-10 text-center text-2xl md:text-5xl lg:text-6xl flex flex-col gap-4">
           <h1>I'm Dharshan VK</h1>
 
           <div className="flex justify-center gap-4 flex-wrap">
