@@ -118,7 +118,7 @@ const Project = () => {
 
                   <h2 className="pjt-title">Hira</h2>
 
-                  <a className="pjt-github">
+                  <a href="https://github.com/dharshan-005/Hira.git" className="pjt-github">
                     <span className="github-text">GitHub</span>
                     <FaGithub className="github-icon" />
                     <FiArrowRight />
