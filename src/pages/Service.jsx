@@ -42,7 +42,7 @@ export default function Service() {
           gsap.utils.selector(containerRef)(".sticky-header h1");
 
         ScrollTrigger.create({
-          trigger: ".sticky",
+          trigger: ".stickies",
           start: "top top",
           end: `+=${window.innerHeight * 4}px`,
           scrub: 1,
@@ -229,7 +229,7 @@ export default function Service() {
     <main ref={containerRef} className="font-['Instrument_Serif']">
       <section
         // ref={sectionRef}
-        className="sticky h-svh flex items-center justify-center px-8 max-lg:h-auto max-lg:py-16"
+        className="stickies h-svh flex items-center justify-center px-8 max-lg:h-auto max-lg:py-16"
       >
         <div className="sticky-header hidden md:block absolute top-[20%] left-1/2 -translate-x-1/2 -translate-y-1/2 max-lg:relative max-lg:transform-none max-lg:mb-16">
           <h1 className="text-[4rem] opacity-0 translate-y-10 text-center max-lg:opacity-100 max-lg:text-3xl">
@@ -246,7 +246,7 @@ export default function Service() {
             <div
               key={id}
               id={id}
-              className="card relative flex-1 aspect-5/7 transform-style-preserve-3d origin-top"
+              className="card relative flex-1 aspect-5/7 transform-style-preserve-3d origin-top max-lg:flex-none max-lg:w-55 max-lg:h-80"
             >
               {/* Front */}
               <div className="absolute inset-0 backface-hidden overflow-hidden rounded-inherit">

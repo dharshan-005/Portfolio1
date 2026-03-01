@@ -1,6 +1,7 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
 import Hira from "/images/Hira.png";
@@ -8,21 +9,17 @@ import Cartify from "/images/Cartify.png";
 import GeoVault from "/images/GeoVault.png";
 
 const Project = () => {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
     gsap.to(".pjt-arrow", {
-      x: 12,
+      x: 8,
       duration: 0.8,
       yoyo: true,
       repeat: -1,
       ease: "power1.inOut",
-      scrollTrigger: {
-        trigger: ".pjt-title-slide",
-        start: "top center",
-        end: "bottom center",
-        toggleActions: "play pause play pause",
-      },
     });
 
     const scrollSection = document.querySelectorAll(".scroll-section");
@@ -94,6 +91,7 @@ const Project = () => {
 
     return () => {
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+      gsap.killTweensOf(".pjt-arrow");
     };
   }, []);
 
@@ -120,13 +118,10 @@ const Project = () => {
 
                   <h2 className="pjt-title">Hira</h2>
 
-                  <a
-                    href="https://github.com/yourusername/hira"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="pjt-github"
-                  >
-                    GitHub <FiArrowRight />
+                  <a className="pjt-github">
+                    <span className="github-text">GitHub</span>
+                    <FaGithub className="github-icon" />
+                    <FiArrowRight />
                   </a>
                 </div>
 
@@ -155,12 +150,12 @@ const Project = () => {
                   <h2 className="pjt-title">Cartify</h2>
 
                   <a
-                    href="https://github.com/yourusername/hira"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="https://github.com/dharshan-005/Cartify.git"
                     className="pjt-github"
                   >
-                    GitHub <FiArrowRight />
+                    <span className="github-text">GitHub</span>
+                    <FaGithub className="github-icon" />
+                    <FiArrowRight />
                   </a>
                 </div>
 
@@ -190,17 +185,17 @@ const Project = () => {
                   <h2 className="pjt-title">GeoVault</h2>
 
                   <a
-                    href="https://github.com/yourusername/hira"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="https://github.com/dharshan-005/GeoVault.git"
                     className="pjt-github"
                   >
-                    GitHub <FiArrowRight />
+                    <span className="github-text">GitHub</span>
+                    <FaGithub className="github-icon" />
+                    <FiArrowRight />
                   </a>
                 </div>
 
                 <div className="pjt-card-image">
-                  <img src={GeoVault} alt="Hira Project" />
+                  <img src={GeoVault} alt="GeoVault Project" />
                 </div>
 
                 <div className="pjt-card-body">
