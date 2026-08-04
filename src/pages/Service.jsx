@@ -30,7 +30,8 @@ export default function Service() {
 
         gsap.set(".sticky-header h1", {
           opacity: 1,
-          y: 0,
+          y: 20,
+          x: 155,
         });
       });
 
