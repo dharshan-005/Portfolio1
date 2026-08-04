@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 
 import me from "../assets/me2.jpg";
 
@@ -149,22 +149,16 @@ const About = () => {
               <div className="tab-details flex">
                 <ul className="pl-3.75 text-[13px] md:text-sm">
                   <li>
-                    <span className="text-[#ff7300]">
-                      Web Developement
-                    </span>{" "}
-                    - Designing Web Applications
+                    <span className="text-[#ff7300]">Web Developement</span> -
+                    Designing Web Applications
                   </li>
                   <li>
-                    <span className="text-[#ff7300]">
-                      Photography
-                    </span>{" "}
-                    - Capturing visual Stories
+                    <span className="text-[#ff7300]">Photography</span> -
+                    Capturing visual Stories
                   </li>
                   <li>
-                    <span className="text-[#ff7300]">
-                      UI/UX Developer
-                    </span>{" "}
-                    - Designing User-Centered Interfaces
+                    <span className="text-[#ff7300]">UI/UX Developer</span> -
+                    Designing User-Centered Interfaces
                   </li>
                 </ul>
               </div>
@@ -173,22 +167,16 @@ const About = () => {
               <div className="tab-details flex">
                 <ul className="pl-3.75">
                   <li>
-                    <span className="text-[#ff7300]">
-                      2024 - 2026
-                    </span>{" "}
-                    - B.E.ECE @SNS College Of Technology
+                    <span className="text-[#ff7300]">2024 - 2026</span> -
+                    B.E.ECE @SNS College Of Technology
                   </li>
                   <li>
-                    <span className="text-[#ff7300]">
-                      2021 - 2022
-                    </span>{" "}
-                    - HSC @Chandra Matriculation Hr. Sec. School
+                    <span className="text-[#ff7300]">2021 - 2022</span> - HSC
+                    @Chandra Matriculation Hr. Sec. School
                   </li>
                   <li>
-                    <span className="text-[#ff7300]">
-                      2019 - 2020
-                    </span>{" "}
-                    - SSLC @Chandra Matriculation Hr. Sec. School
+                    <span className="text-[#ff7300]">2019 - 2020</span> - SSLC
+                    @Chandra Matriculation Hr. Sec. School
                   </li>
                 </ul>
               </div>

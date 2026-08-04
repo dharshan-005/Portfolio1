@@ -53,13 +53,13 @@ const Home = () => {
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center px-6 md:px-16 zen-antique-soft-regular bg-cover bg-bottom bg-no-repeat bg-[url('/src/assets/mobile-bg-light.png')] dark:bg-[url('/src/assets/mobile-bg-dark.png')] md:bg-[url('/src/assets/hero-bg-light.png')] md:dark:bg-[url('/src/assets/hero-bg-dark.png')] md:bg-center">
       {/* LEFT — LOGO */}
-      <div className="logo absolute left-6 md:left-12 top-8 flex items-center">
+      <a href="/" className="logo absolute left-6 md:left-12 top-8 flex items-center">
         <img
           src={logo}
           alt="Dharshan Logo"
           className="h-10 md:h-12 w-auto object-contain"
         />
-      </div>
+      </a>
 
       {/* RIGHT — RESUME + ICONS */}
       <div className="resume-btn absolute right-6 md:right-12 top-8 flex flex-col items-end gap-10">
@@ -101,7 +101,7 @@ const Home = () => {
       {/* CENTER — HERO CONTENT */}
       <div className="flex flex-col md:flex-row items-center gap-12">
         {/* TEXT */}
-        <div className="hero-text relative -top-24 md:top-0 z-10 text-center text-2xl md:text-5xl lg:text-6xl flex flex-col gap-4">
+        <div className="hero-text relative -top-24 md:top-0 z-10 text-center text-[20px] md:text-5xl lg:text-6xl flex flex-col gap-4">
           <h1>I'm Dharshan VK</h1>
 
           <div className="flex justify-center gap-4 flex-wrap">
