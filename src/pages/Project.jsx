@@ -1,15 +1,18 @@
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FiArrowRight } from "react-icons/fi";
 
-import Hira from "/images/Hira.png";
-import Cartify from "/images/Cartify.png";
-import GeoVault from "/images/GeoVault.png";
+import ProjectCard from "../Components/ProjectCard";
+import { projects } from "../data/projectsData";
+
+// import Hira from "/images/Hira.png";
+// import Cartify from "/images/Cartify.png";
+// import GeoVault from "/images/GeoVault.png";
 
 const Project = () => {
-  const [isMobile, setIsMobile] = useState(false);
+  // const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -100,8 +103,12 @@ const Project = () => {
       <div className="scroll-section horizontal-section pjt-section">
         <div className="pjt-wrapper">
           <div role="list" className="pjt-list">
-            <div role="listitem" className="pjt-item pjt-title-slide">
+            <div
+              role="listitem"
+              className="pjt-item pjt-title-slide flex flex-col items-center justify-center gap-2 md:flex-row md:gap-6"
+            >
               <h1 className="pjt-heading">Projects</h1>
+
               <div className="pjt-scroll">
                 <p className="flex items-center gap-2">
                   Scroll
@@ -109,8 +116,23 @@ const Project = () => {
                 </p>
               </div>
             </div>
+            {projects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
+  );
+};
 
-            {/* Hira */}
+export default Project;
+
+{
+  /*
+  
+  
+            // {/* Hira 
             <div role="listitem" className="pjt-item">
               <div className="pjt-card">
                 <div className="pjt-card-header">
@@ -118,7 +140,10 @@ const Project = () => {
 
                   <h2 className="pjt-title">Hira</h2>
 
-                  <a href="https://github.com/dharshan-005/Hira.git" className="pjt-github">
+                  <a
+                    href="https://github.com/dharshan-005/Hira.git"
+                    className="pjt-github"
+                  >
                     <span className="github-text">GitHub</span>
                     <FaGithub className="github-icon" />
                     <FiArrowRight />
@@ -141,7 +166,7 @@ const Project = () => {
               </div>
             </div>
 
-            {/* Cartify */}
+            // {/* Cartify 
             <div role="listitem" className="pjt-item">
               <div className="pjt-card">
                 <div className="pjt-card-header">
@@ -176,7 +201,7 @@ const Project = () => {
               </div>
             </div>
 
-            {/* GeoVault */}
+            // {/* GeoVault 
             <div role="listitem" className="pjt-item">
               <div className="pjt-card">
                 <div className="pjt-card-header">
@@ -209,11 +234,5 @@ const Project = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </main>
-  );
-};
-
-export default Project;
+  */
+}

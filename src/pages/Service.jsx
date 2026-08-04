@@ -112,8 +112,9 @@ export default function Service() {
       });
     }, containerRef);
 
-    return () => ctx.revert(); // 🔥 cleans only this component
+    return () => ctx.revert();
   }, []);
+  
   // useEffect(() => {
   //   if (!containerRef.current) return;
 

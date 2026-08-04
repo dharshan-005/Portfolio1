@@ -50,7 +50,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
   return (
     <>
       <div className="fixed bottom-4 flex w-full justify-center z-50">
-        <div className="flex gap-8 px-6 py-3 rounded-2xl border backdrop-blur-md bg-white/80 dark:bg-black/80 items-center transition-colors duration-300">
+        <div className="flex gap-5 md:gap-8 px-4 md:px-6 py-3 rounded-2xl border backdrop-blur-md bg-white/80 dark:bg-black/80 items-center transition-colors duration-300">
           <a href="#home">
             {darkMode ? (
               <img src={home} alt="" className={iconClass("home")} />
@@ -89,7 +89,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
           <button
             onClick={() => setDarkMode(!darkMode)}
-            className="ml-2 hover:scale-110 transition cursor-pointer"
+            className=" hover:scale-110 transition cursor-pointer"
           >
             {!darkMode ? <Sun size={20} /> : <Moon size={20} />}
           </button>

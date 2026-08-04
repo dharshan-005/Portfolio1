@@ -13,6 +13,8 @@ import Service from "./pages/Service";
 import Contact from "./pages/Contact";
 import GsapAnimate from "./Components/gsap";
 
+import Footer from "./Components/Footer";
+
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/all";
 import gsap from "gsap";
@@ -87,6 +89,7 @@ const App = () => {
               }
             />
           </Routes>
+            <Footer />
         </div>
       </div>
     </>
