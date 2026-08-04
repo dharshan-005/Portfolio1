@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FaInstagram, FaLinkedin, FaGithub } from "react-icons/fa";
-import Dharshan from "../assets/Dharshan-gemini.png";
+// import Dharshan from "../assets/Dharshan-gemini.png";
 import TextType from "./TextType";
 
-import resume from "../assets/Dharshan_Resume.pdf";
+import resume from "../assets/Dharshan_Resume5.pdf";
 import logo from "../assets/logor.png";
 
 import gsap from "gsap";
@@ -51,10 +51,7 @@ const Home = () => {
   });
 
   return (
-    <section
-      className="relative w-full min-h-screen flex items-center justify-center px-6 md:px-16 zen-antique-soft-regular bg-cover bg-center bg-no-repeat bg-[url('/src/assets/back2.png')]
-             dark:bg-[url('/src/assets/back1.png')]"
-    >
+    <section className="relative w-full min-h-screen flex items-center justify-center px-6 md:px-16 zen-antique-soft-regular bg-cover bg-bottom bg-no-repeat bg-[url('/src/assets/mobile-bg-light.png')] dark:bg-[url('/src/assets/mobile-bg-dark.png')] md:bg-[url('/src/assets/hero-bg-light.png')] md:dark:bg-[url('/src/assets/hero-bg-dark.png')] md:bg-center">
       {/* LEFT — LOGO */}
       <div className="logo absolute left-6 md:left-12 top-8 flex items-center">
         <img

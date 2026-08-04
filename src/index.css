@@ -463,6 +463,101 @@ html {
   padding: 2rem;
 }
 
+.footer-section {
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.footer-tagline {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  max-width: 320px;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-size: 1.1rem;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-social-link:hover {
+  background: var(--accent, #ff7300);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-top-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  flex-shrink: 0;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.footer-top-btn:hover {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  text-align: end;
+}
+
+.footer-bottom p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
 @media (max-width: 575.98px) {
   .pjt-heading {
     font-size: 2.5rem;
@@ -498,7 +593,7 @@ html {
 
   .pjt-desc {
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    line-clamp: 4;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -532,6 +627,29 @@ html {
     right: auto;
     top: auto;
     font-size: 0.95rem;
+  }
+
+  .footer-section {
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2.5rem 1.5rem 1.5rem;
+  }
+
+  .footer-socials {
+    order: 2;
+  }
+
+  .footer-top-btn {
+    order: 3;
+  }
+
+  .footer-bottom {
+    text-align: center;
   }
 }
 

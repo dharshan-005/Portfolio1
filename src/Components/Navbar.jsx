@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
+import {
+  Home,
+  User,
+  Briefcase,
+  FolderKanban,
+  Mail,
+  Moon,
+  Sun,
+} from "lucide-react";
 
-import home from "../assets/home1.png";
-import home1 from "../assets/home.png";
-import about from "../assets/idCard1.png";
-import about1 from "../assets/idCard.png";
-import service from "../assets/service.png";
-import service1 from "../assets/service1.png";
-import project from "../assets/project1.png";
-import project1 from "../assets/project.png";
-import contact from "../assets/addressBook1.png";
-import contact1 from "../assets/addressBook.png";
-
-const sections = ["home", "about", "service", "project", "contact"];
+const sections = [
+  { id: "home", icon: Home, label: "Home" },
+  { id: "about", icon: User, label: "About" },
+  { id: "service", icon: Briefcase, label: "Services" },
+  { id: "project", icon: FolderKanban, label: "Projects" },
+  { id: "contact", icon: Mail, label: "Contact" },
+];
 
 const Navbar = ({ darkMode, setDarkMode }) => {
   const [activeSection, setActiveSection] = useState("home");
@@ -21,7 +24,7 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     const handleScroll = () => {
       let current = "home";
 
-      sections.forEach((id) => {
+      sections.forEach(({ id }) => {
         const section = document.getElementById(id);
         if (!section) return;
 
@@ -40,62 +43,39 @@ const Navbar = ({ darkMode, setDarkMode }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const iconClass = (id) =>
-    `w-6 transition-all duration-300 ${
+  const iconWrapperClass = (id) =>
+    `transition-all duration-300 ${
       activeSection === id
-        ? "scale-125 -translate-y-1"
-        : "opacity-60 hover:opacity-100 hover:-translate-y-1"
+        ? "scale-125 -translate-y-1 text-black dark:text-white"
+        : "opacity-60 hover:opacity-100 hover:-translate-y-1 text-black dark:text-white"
     }`;
 
   return (
-    <>
-      <div className="fixed bottom-4 flex w-full justify-center z-50">
-        <div className="flex gap-5 md:gap-8 px-4 md:px-6 py-3 rounded-2xl border backdrop-blur-md bg-white/80 dark:bg-black/80 items-center transition-colors duration-300">
-          <a href="#home">
-            {darkMode ? (
-              <img src={home} alt="" className={iconClass("home")} />
-            ) : (
-              <img src={home1} className={iconClass("home")} />
-            )}
-          </a>
-          <a href="#about">
-            {darkMode ? (
-              <img src={about} alt="" className={iconClass("about")} />
-            ) : (
-              <img src={about1} alt="" className={iconClass("about")} />
-            )}
-          </a>
-          <a href="#service">
-            {darkMode ? (
-              <img src={service} alt="" className={iconClass("service")} />
-            ) : (
-              <img src={service1} alt="" className={iconClass("service")} />
-            )}
-          </a>
-          <a href="#project">
-            {darkMode ? (
-              <img src={project} alt="" className={iconClass("project")} />
-            ) : (
-              <img src={project1} alt="" className={iconClass("project")} />
-            )}
-          </a>
-          <a href="#contact">
-            {darkMode ? (
-              <img src={contact} alt="" className={iconClass("contact")} />
-            ) : (
-              <img src={contact1} alt="" className={iconClass("contact")} />
-            )}
-          </a>
+    <div className="fixed bottom-4 flex w-full justify-center z-50">
+      <div className="flex gap-5 md:gap-8 px-4 md:px-6 py-3 rounded-2xl border backdrop-blur-md bg-white/80 dark:bg-black/80 items-center transition-colors duration-300">
+        {sections.map((section) => {
+          const Icon = section.icon;
 
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            className=" hover:scale-110 transition cursor-pointer"
-          >
-            {!darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
-        </div>
+          return (
+            <a
+              key={section.id}
+              href={`#${section.id}`}
+              aria-label={section.label}
+            >
+              <Icon size={22} className={iconWrapperClass(section.id)} />
+            </a>
+          );
+        })}
+
+        <button
+          onClick={() => setDarkMode(!darkMode)}
+          className="hover:scale-110 transition cursor-pointer"
+          aria-label="Toggle dark mode"
+        >
+          {!darkMode ? <Sun size={20} /> : <Moon size={20} />}
+        </button>
       </div>
-    </>
+    </div>
   );
 };
 
